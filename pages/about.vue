@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>works here so far</p>
-    <nuxt-link :to="{ name: 'about' }">try on about</nuxt-link>
+    <p>works here too</p>
+    <nuxt-link :to="{ name: 'index' }">try on index</nuxt-link>
     <pre>{{ data }}</pre>
   </div>
 </template>
@@ -10,12 +10,12 @@
 export default {
   async asyncData({ $axios }) {
     const { data } = await $axios.get(
-      'https://jsonplaceholder.typicode.com/posts/1'
+      'https://jsonplaceholder.typicode.com/posts/2'
     )
     return { data }
   },
   mounted() {
-    console.log('works here', this.data)
+    console.log('yes, it does work too', this.data)
   },
 }
 </script>
